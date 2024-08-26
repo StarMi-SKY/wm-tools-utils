@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>宛墨工具函数库测试</title>
+  <script src="../dist/wanmo-utils.js"></script>
+</head>
+<body>
+<h1>🎉✨🎡欢迎来到宛墨工具函数库🎡</h1>
+<h1>宛墨工具函数库-函数-测试</h1>
+<script>
+  const handleResize = wmUtils.throttle(() => {
+    console.log('窗口大小改变了！');
+  }, 1000, false);
+  window.addEventListener('resize', handleResize);
+</script>
+</body>
+</html>

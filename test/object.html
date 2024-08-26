@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宛墨工具函数库测试</title>
+    <script src="../dist/wanmo-utils.js"></script>
+</head>
+<body>
+<h1>🎉✨🎡欢迎来到宛墨工具函数库🎡</h1>
+<h3>宛墨工具函数库-对象-测试</h3>
+<script>
+    // 示例
+    const original = {
+        name: 'John',
+        age: 30,
+        address: {
+            city: 'New York',
+            zip: '10001'
+        },
+        hobbies: ['reading', 'traveling'],
+        date: new Date(),
+        regex: /abc/g,
+        map: new Map([[1, 'one'], [2, 'two']]),
+        set: new Set([1, 2, 3])
+    };
+    const cloned = wmUtils.deepClone(original);
+    console.log('宛墨工具函数库',cloned)
+    console.log('宛墨工具函数库',cloned.address !== original.address); // true，地址不同
+    console.log('宛墨工具函数库',cloned.hobbies !== original.hobbies); // true，数组不同
+    console.log('宛墨工具函数库',cloned.date !== original.date); // true，日期不同
+    console.log('宛墨工具函数库',cloned.regex !== original.regex); // true，正则不同
+    console.log('宛墨工具函数库',cloned.map !== original.map); // true，Map不同
+    console.log('宛墨工具函数库',cloned.set !== original.set); // true，Set不同
+
+
+    const obj1 = { a: 1, b: { c: 2 } };
+    const obj2 = { b: { d: 3 }, e: 4 };
+    const obj3 = { a: 5, b: { c: 6, f: 7 } };
+
+    const merged = wmUtils.mergeObjects({}, obj1, obj2, obj3);
+    console.log('宛墨工具函数库-对象合并',merged);
+</script>
+</body>
+</html>

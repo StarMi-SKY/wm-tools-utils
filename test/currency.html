@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宛墨工具函数库测试</title>
+    <script src="../dist/wanmo-utils.js"></script>
+</head>
+<body>
+<h1>🎉✨🎡欢迎来到宛墨工具函数库🎡</h1>
+<h3>宛墨工具函数库-通用函数-测试</h3>
+<script>
+    // 格式化日期
+    console.log('--------------------------格式化日期--------------------------')
+    const date = new Date();
+    console.log(wmUtils.formatDate(date)); // 默认格式 "2023-07-15"
+    console.log(wmUtils.formatDate(date, 'MM/DD/YYYY')); // 输出: "07/15/2023"
+    console.log(wmUtils.formatDate(date, 'YYYY-MM-DD hh:mm:ss')); // 输出: "23-07-15 14:30:00"
+
+    // 获取随机数
+    console.log('--------------------------获取随机数--------------------------')
+    console.log(wmUtils.getRandomNumber(1, 10)); // 生成1到10之间的随机整数
+    console.log(wmUtils.getRandomNumber(1, 10, false)); // 生成1到10之间的随机浮点数
+    console.log(wmUtils.getRandomNumber(0, 100)); // 生成0到100之间的随机整数
+    console.log(wmUtils.getRandomString(10)); // 生成长度为10的随机字符串
+    console.log(wmUtils.getRandomString(5)); // 生成长度为5的随机字符串
+
+    // 深度合并
+    console.log('--------------------------深度合并--------------------------')
+    const obj1 = { a: 1, b: { c: 2 } };
+    const obj2 = { b: { d: 3 }, e: 4 };
+    const obj3 = { a: 5, b: { c: 6, f: 7 } };
+    const obj4 = { g: [1, 2, 3] };
+    const obj5 = { g: [4, 5] };
+
+    const merged = wmUtils.deepMerge({}, obj1, obj2, obj3, obj4, obj5);
+    console.log('深度合并',merged);
+    // 输出: { a: 5, b: { c: 6, d: 3, f: 7 }, e: 4, g: [1, 2, 3, 4, 5] }
+
+    // 类型判断
+    console.log('--------------------------类型判断--------------------------')
+    console.log(wmUtils.getType(null));           // "null"
+    console.log(wmUtils.getType(42));             // "number"
+    console.log(wmUtils.getType("Hello"));        // "string"
+    console.log(wmUtils.getType(true));           // "boolean"
+    console.log(wmUtils.getType(undefined));      // "undefined"
+    console.log(wmUtils.getType(Symbol('sym')));  // "symbol"
+    console.log(wmUtils.getType(10n));            // "bigint"
+    console.log(wmUtils.getType([]));             // "array"
+    console.log(wmUtils.getType({}));             // "object"
+    console.log(wmUtils.getType(new Date()));     // "date"
+    console.log(wmUtils.getType(/abc/));          // "regexp"
+    console.log(wmUtils.getType(function(){}));   // "function"
+
+    // 获取参数
+    console.log('--------------------------获取参数--------------------------')
+    // 假设当前 URL 是 'https://example.com/?name=John&age=30&sex=1&address=CQ'
+    console.log(wmUtils.getQueryParams('https://example.com/?name=John&age=30&sex=1&address=CQ'));
+    // 输出: { name: 'John', age: ['30', '31'] }
+
+    // 验证邮箱、手机号、身份证号等
+    console.log('--------------------------验证邮箱、手机号、身份证号等--------------------------')
+    console.log(wmUtils.isValidPhoneNumber("13812345678")); // 输出: true (有效)
+    console.log(wmUtils.isValidPhoneNumber("19912345678")); // 输出: true (有效)
+    console.log(wmUtils.isValidPhoneNumber("12345678901")); // 输出: false (无效)
+    console.log(wmUtils.isValidPhoneNumber("17012345678")); // 输出: false (无效)
+    console.log(wmUtils.isValidIDCard("123456789012345")); // 输出: false (15位无效)
+    console.log(wmUtils.isValidIDCard("123456789012345X")); // 输出: true (18位无效)
+    console.log(wmUtils.isValidEmail("test@example.com")); // 输出: true
+    console.log(wmUtils.isValidEmail("invalid-email")); // 输出: false
+    console.log(wmUtils.isValidEmail("user.name+tag+sorting@example.com")); // 输出: true
+    console.log(wmUtils.isValidEmail("user@com")); // 输出: false
+
+    // 生成UUID
+    console.log('--------------------------生成UUID--------------------------')
+    console.log(wmUtils.generateUUID()); // 输出例: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+
+</script>
+</body>
+</html>

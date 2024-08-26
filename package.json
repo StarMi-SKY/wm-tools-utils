@@ -1,0 +1,27 @@
+{
+  "name": "wm-tools-utils",
+  "version": "1.0.1",
+  "description": "一个用于 JavaScript 的函数库，旨在提供一些便捷的工具函数，帮助你简化开发过程，提高代码的可读性和可维护性。",
+  "main": "/dist/wanmo-utils.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StarMi-SKY/wm-tools-utils.git"
+  },
+  "keywords": [
+    "utils",
+    "array",
+    "object",
+    "function",
+    "string"
+  ],
+  "author": "StarMi-SKY",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宛墨工具函数库测试</title>
+    <script src="../dist/wanmo-utils.js"></script>
+</head>
+<body>
+<h1>🎉✨🎡欢迎来到宛墨工具函数库🎡</h1>
+<h3>宛墨工具函数库-字符串-测试</h3>
+<script>
+    console.log('--------------------------字符串去除空格--------------------------')
+    console.log(wmUtils.trimString("   Hello World!   ", 'both')); // 输出: "Hello World!"
+    console.log(wmUtils.trimString("   Hello World!   ", 'start')); // 输出: "Hello World!   "
+    console.log(wmUtils.trimString("   Hello World!   ", 'end'));   // 输出: "   Hello World!"
+    console.log(wmUtils.trimString("   Hello World!   ", 'all'));   // 输出: "HelloWorld!"
+    console.log(wmUtils.trimString("   Hello   World!   ", 'all')); // 输出: "HelloWorld!"
+
+    // 错误处理示例
+    console.log(wmUtils.trimString(12345, 'both')); // 将抛出错误
+</script>
+</body>
+</html>
