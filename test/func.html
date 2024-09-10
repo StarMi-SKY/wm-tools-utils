@@ -13,6 +13,24 @@
     console.log('窗口大小改变了！');
   }, 1000, false);
   window.addEventListener('resize', handleResize);
+
+  const testFunc1 = function(a, b) { return a + b; };
+  const testFunc2 = function() { console.log('Hello, World!'); };
+  const testFunc3 = function(x, y = 10) { return x * y; };
+
+  const serialized1 = wmUtils.serializeFunction(testFunc1);
+  const deserialized1 = wmUtils.deserializeFunction(serialized1);
+  console.log(deserialized1(2, 3),serialized1); // 输出: 5
+
+  const serialized2 = wmUtils.serializeFunction(testFunc2);
+  const deserialized2 = wmUtils.deserializeFunction(serialized2);
+  deserialized2(); // 输出: Hello, World!
+  console.log(serialized2)
+
+  const serialized3 = wmUtils.serializeFunction(testFunc3);
+  const deserialized3 = wmUtils.deserializeFunction(serialized3);
+  console.log(deserialized3(5.55),serialized3); // 输出: 50
+
 </script>
 </body>
 </html>

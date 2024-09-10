@@ -12,3 +12,4 @@ export { sortArray } from './array/sortArray.min' // 数组排序
 export { trimString } from './string/trimString.min' // 去除字符串前后空格
 export { isValidIDCard,isValidEmail,isValidPhoneNumber } from './currency/verificationAssistance.min' // 身份证、邮箱、手机号码校验
 export { generateUUID } from './currency/generateUUID.min' // 生成uuid
+export { serializeFunction,deserializeFunction } from './function/functionSerialization.min' // 函数序列化与反序列化
