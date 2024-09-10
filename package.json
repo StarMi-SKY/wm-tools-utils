@@ -1,6 +1,6 @@
 {
   "name": "wm-tools-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "一个用于 JavaScript 的函数库，旨在提供一些便捷的工具函数，帮助你简化开发过程，提高代码的可读性和可维护性。",
   "main": "/dist/wanmo-utils.js",
   "scripts": {
