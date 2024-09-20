@@ -7,10 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:watch": "webpack --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/StarMi-SKY/wm-tools-utils.git"
-  },
+  "homepage" : "https://docs.wm-utils.starmi-cloud.cn/",
   "keywords": [
     "utils",
     "array",
