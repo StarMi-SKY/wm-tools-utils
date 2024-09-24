@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宛墨工具函数库测试</title>
+    <script src="../dist/wanmo-utils.js"></script>
+</head>
+<body>
+<h1>🎉✨🎡欢迎来到宛墨工具函数库🎡</h1>
+<h3>宛墨工具函数库-日期类-测试</h3>
+<script>
+    console.log('--------------------------判断是否在指定日期内--------------------------')
+    console.log(wmUtils.areDatesWithinRange(new Date("2024-05-01"),new Date("2024-05-04"),5)); // 输出:true
+
+    // 格式化日期
+    console.log('--------------------------格式化日期--------------------------')
+    const date = new Date();
+    console.log(wmUtils.formatDate(date)); // 默认格式 "2023-07-15"
+    console.log(wmUtils.formatDate(date, 'MM/DD/YYYY')); // 输出: "07/15/2023"
+    console.log(wmUtils.formatDate(date, 'YYYY-MM-DD hh:mm:ss')); // 输出: "23-07-15 14:30:00"
+</script>
+</body>
+</html>
